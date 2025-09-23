@@ -1,0 +1,15 @@
+magrittr
+dplyr
+tidyverse
+ggplot2
+modelsummary
+stats
+factoextra
+cluster
+fastcluster
+hopkins
+factoextra
+NbClust
+fpc
+mclust
+dbscan
