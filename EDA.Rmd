@@ -1,11 +1,10 @@
 ---
 title: "EDA"
-output:
-  html_document:
-    df_print: paged
+output: github_document
 ---
 
-#  Clusterization of Customer Segments (Part I)
+# Clusterization of Customer Segments (Part I)
+
 ## Exploratory Data Analaysis (EDA) of the raw dataset
 
 ```{r}
@@ -18,39 +17,53 @@ raw<-read.csv(file = "D:/МО II/WalletUpCRM.csv")
 raw<-data.frame(raw)
 head(raw)
 ```
+
 Reviewing the structure of the data
+
 ```{r}
 dim(raw)
 ```
+
 The dataset includes data for 10 750 customers and their multiple characteristics, which we will use for the clusterization.
+
 ```{r}
 str(raw)
 ```
+
 The data is all numeric. Every column is in the right data type. Some attribbutes like income or mortgage are usually decimal numbers, but for this project they will be analyzed as integers as we do not have further specific information
+
 ```{r}
 summary(raw)
 ```
+
 The above shown code provides general exploratory summary of the raw dataset. By these general statistics, I can overview the mean values and the distribution of each column.
 
 ### Check for NULL values
+
 ```{r}
 any(is.null(raw))
 ```
+
 Check by each column
+
 ```{r}
 sapply(raw, function(x) any(is.null(x)))
 ```
+
 There are no missing values in the dataset, which assists in quicker EDA, clustering validation and modelling in the next steps.
 
 ###Correlation analysis
+
 ```{r}
 datasummary_correlation(raw, fmt = 2, title = "Correlation Matrix")
 ```
-There is a strong positive correlation between Grocery Spending x Income (0.9). Logically, a strong positive correlation with a coefficient of 0.92 can also be observed between Stock Volume x NasdaqInvest. Investments made in Bitcoin and NFT are correlated with a coefficient of 0.8, which may indicate that similar types of financial assets are preferred by one type of customer.
-However, strong or weak correlation coefficients do not equal causation between the analysed characteristics. This is another reason why we want to build the clustering model based on only behavioral attributes and ignore demographics like age and income. The customers' behaviour can hide interesting insights or segments, which can not be observed with simple EDA or correlation analysis.
+
+There is a strong positive correlation between Grocery Spending x Income (0.9). Logically, a strong positive correlation with a coefficient of 0.92 can also be observed between Stock Volume x NasdaqInvest. Investments made in Bitcoin and NFT are correlated with a coefficient of 0.8, which may indicate that similar types of financial assets are preferred by one type of customer. However, strong or weak correlation coefficients do not equal causation between the analysed characteristics. This is another reason why we want to build the clustering model based on only behavioral attributes and ignore demographics like age and income. The customers' behaviour can hide interesting insights or segments, which can not be observed with simple EDA or correlation analysis.
 
 ### Distribution of customers based on age and other attributes
+
 In the following code chunk, I built multiple visualizations in order to compare customers once they are divided in age groups. First I had to create the age bins, after that I inserted 4 bar charts.
+
 ```{r}
 data_age_bins <- raw %>%
   mutate(age_group = case_when(
@@ -96,7 +109,9 @@ ggplot(data_age_bins, aes(x = age_group, y= ATMVisits)) +
 ```
 
 ### Outliers detection
+
 Even though I work with clean dataset, it is still very important to check for outliers in the data. These are too high or low values based on the interquartile range of the attribute. I picked the reviewed attributes on random choice. The detection of outliers is crucial, because if there are identified ones, eventually the final ML clustering model should be picked with such consideration. I used boxplots to quickly review.
+
 ```{r}
 boxplot(raw$MortageVolume, ylab = "Mortgage")
 boxplot(raw$AccountSpending, ylab= "AccountSpending")
@@ -104,7 +119,7 @@ boxplot(raw$GrocerySpending, ylab= "GrocerySpending")
 boxplot(raw$USAXSFundInvest, ylab= "USAXS Fund Invest")
 boxplot(raw$ServiceFees, ylab= "ServiceFees")
 ```
+
 In the dataset containing the behavioral characteristics of customers, anomalies can be found in some variables. If this data is not removed, but kept in order to preserve the information, then it is good to choose a clustering model, which copes better with the treatment of anomalies. For example, k-means is quite sensitive to outliers and it is possible that K-medoids is more suitable.
 
 In the next notebooks, the project will continue in preparing the data for model building, validation of cluster formation and optimal number of k-clusters. Once I find this information, the testing between different models can initiate. Each model will be valuated with specific metrics. In the end, we will analyze the clustered dataset and present the customer segments.
-

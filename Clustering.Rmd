@@ -1,8 +1,6 @@
 ---
 title: "Cluster Analysis"
-output:
-  html_document:
-    df_print: paged
+output: github_document
 ---
 
 # Choosing the right ML model for a clusterization of customer segments

@@ -1,6 +1,6 @@
 ---
 title: "Data Preparation and Clustering Validation"
-output: html_notebook
+output: github_document
 ---
 
 # Preparation of dataset and Clustering Validation
