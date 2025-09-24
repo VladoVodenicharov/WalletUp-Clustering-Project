@@ -569,7 +569,7 @@ personas <- data.frame(
                "Conservative, older clients. Prefers traditional banking. 1,500 clients.")
 )
 
-print(personas)
+knitr::kable(personas, caption = "Customer Personas", format = "markdown")
 ```
 
     ##                 Persona Cluster Age_Median Income_Median
