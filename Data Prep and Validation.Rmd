@@ -7,6 +7,7 @@ output: github_document
 
 ```{r}
 #Load the packages
+load(".RData")
 packages <- readLines("requirements.txt")
 lapply(packages, library, character.only = TRUE)
 ```

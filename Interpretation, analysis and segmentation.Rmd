@@ -1,8 +1,9 @@
 ---
 title: "Interpretation, analysis and Customer segmentation"
-output: html_notebook
+output: github_document
 ---
 ```{r}
+load(".RData")
 packages <- readLines("requirements.txt")
 lapply(packages, library, character.only = TRUE)
 ```

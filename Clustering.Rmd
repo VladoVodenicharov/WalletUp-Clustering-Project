@@ -5,6 +5,7 @@ output: github_document
 
 # Choosing the right ML model for a clusterization of customer segments
 ```{r}
+load(".RData")
 packages <- readLines("requirements.txt")
 lapply(packages, library, character.only = TRUE)
 ```
