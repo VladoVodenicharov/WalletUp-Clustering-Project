@@ -1,11 +1,3 @@
----
-output:
-  pdf_document: default
-  html_document: default
----
-<<<<<<< HEAD
-EDA
-================
 
 # Clusterization of Customer Segments (Part I)
 
@@ -1101,4 +1093,3 @@ of k-clusters. Once I find this information, the testing between
 different models can initiate. Each model will be valuated with specific
 metrics. In the end, we will analyze the clustered dataset and present
 the customer segments.
->>>>>>> 7eee71c182edf2d68305e343263b590951fce776

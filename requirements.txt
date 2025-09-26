@@ -13,3 +13,4 @@ NbClust
 fpc
 mclust
 dbscan
+knitr
