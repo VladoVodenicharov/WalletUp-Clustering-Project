@@ -322,6 +322,8 @@ clusters (\$3,500). Cluster number 6 pays the highest mortgage of around
 segments. Cluster 3 is the most balanced, with rising investments.
 (\$3,500). \### App Logins
 
+### App Logins
+
 ``` r
 ggplot(data = clust_data, aes(x = factor(Clusters), y = AppLogins)) +
   geom_boxplot() +
@@ -330,6 +332,8 @@ ggplot(data = clust_data, aes(x = factor(Clusters), y = AppLogins)) +
 ```
 
 ![](Interpretation,-analysis-and-segmentation-Rmd_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+
+### Time spent in Online Banking
 
 ``` r
 ggplot(data = clust_data, aes(x = factor(Clusters), y = TimeOnlineBanking)) +
@@ -340,6 +344,8 @@ ggplot(data = clust_data, aes(x = factor(Clusters), y = TimeOnlineBanking)) +
 
 ![](Interpretation,-analysis-and-segmentation-Rmd_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
+### Bitcoins
+
 ``` r
 ggplot(data = clust_data, aes(x = factor(Clusters), y = Bitcoins)) +
   geom_boxplot() +
@@ -349,6 +355,8 @@ ggplot(data = clust_data, aes(x = factor(Clusters), y = Bitcoins)) +
 
 ![](Interpretation,-analysis-and-segmentation-Rmd_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
+### NFT
+
 ``` r
 ggplot(data = clust_data, aes(x = factor(Clusters), y = NFTs)) +
   geom_boxplot() +
@@ -357,6 +365,8 @@ ggplot(data = clust_data, aes(x = factor(Clusters), y = NFTs)) +
 ```
 
 ![](Interpretation,-analysis-and-segmentation-Rmd_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+
+### Branch/office visitations
 
 ``` r
 ggplot(data = clust_data, aes(x = factor(Clusters), y = SocialMediaInter)) +
