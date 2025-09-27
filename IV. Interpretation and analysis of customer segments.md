@@ -366,7 +366,7 @@ ggplot(data = clust_data, aes(x = factor(Clusters), y = NFTs)) +
 
 ![](Interpretation,-analysis-and-segmentation-Rmd_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
-### Branch/office visitations
+### Social media channels followed
 
 ``` r
 ggplot(data = clust_data, aes(x = factor(Clusters), y = SocialMediaInter)) +
