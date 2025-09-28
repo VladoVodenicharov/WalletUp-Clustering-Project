@@ -126,7 +126,7 @@ lapply(packages, library, character.only = TRUE)
 ## Read and inspect data
 
 ``` r
-raw<-read.csv(file = "D:/МО II/WalletUpCRM.csv")
+raw<-read.csv(file = "WalletUpCRM.csv")
 raw<-data.frame(raw)
 head(raw)
 ```
